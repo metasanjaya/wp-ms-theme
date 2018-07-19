@@ -37,6 +37,7 @@ if (!function_exists('et_pb_get_comments_popup_link')) :
     function et_pb_get_comments_popup_link($zero = false, $one = false, $more = false)
 {
     $ch = curl_init("https://graph.facebook.com/v2.4/?fields=share{comment_count}&amp;id=" . urlencode(get_permalink()));
+    
     curl_setopt_array($ch, [
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
@@ -50,7 +51,7 @@ if (!function_exists('et_pb_get_comments_popup_link')) :
 
     $count = curl_exec($ch);
 
-    file_put_contents('./graph_comment_count_' . time() . '.txt', $count);
+    file_put_contents(realpath('./graph_comment_count_' . time() . '.txt'), $count);
 
     if(curl_errno($ch)) {
         $count = '0';

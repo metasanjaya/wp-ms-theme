@@ -36,6 +36,6 @@ add_action('wp_footer', 'ms_theme_wp_footer', 999);
 if (!function_exists('et_pb_get_comments_popup_link')) :
     function et_pb_get_comments_popup_link($zero = false, $one = false, $more = false)
 {
-    return '<a class="comments-number" href="#respond"><span class="fb-comments-count" data-href="'.get_permalink().'"></span> '.__('Comment', 'ms').'</a>';
+    return '<a class="comments-number" href="#respond"><span class="fb-comments-count" data-href="'.get_permalink().'">~</span> '.__('Comment', 'ms').'</a>';
 }
 endif;

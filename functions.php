@@ -9,7 +9,7 @@ add_action('wp_enqueue_scripts', 'ms_theme_enqueue_styles');
 function ms_theme_wp_head()
 {
     ?>
-    <meta property="fb:admins" content="metasanjaya"/>
+    <meta property="fb:app_id" content="1048690178631420"/>
     <?php
 
 }

@@ -36,7 +36,7 @@ add_action('wp_footer', 'ms_theme_wp_footer', 999);
 if (!function_exists('et_pb_get_comments_popup_link')) :
     function et_pb_get_comments_popup_link($zero = false, $one = false, $more = false)
 {
-    $url = "https://graph.facebook.com/v2.4/?fields=share{comment_count}&amp;id=" . urlencode(get_permalink());
+    $url = "https://graph.facebook.com/v3.0/?fields=share{comment_count}&amp;id=" . urlencode(get_permalink());
     $ch = curl_init($url);
 
     curl_setopt_array($ch, [
